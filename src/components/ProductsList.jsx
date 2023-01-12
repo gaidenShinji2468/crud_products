@@ -5,25 +5,21 @@ getUpPrepareDelete(id): recibe como argumento el id del objeto que se va a elimi
 
 products: arreglo de productos.
 */
-
+import Product from "./Product"
 const ProductsList = ({products, getUpPrepareUpdate, getUpPrepareDelete }) => {
 
 
     return(
         <ul>
             {
-                products?.map( (product, index) => (
-                    <li key={`user-${index}`}>
-                        <h4><span>Nombre del producto:</span> {product.name} {userElement.last_name}</h4>
-                        <h4><span>Categoria:</span> {product.category}</h4>
-                        <h4><span>Precio:</span> {product.price}</h4>
-                        <h4><span>Disponibilidad:</span> {product.isAvailable}</h4>
-                 
-                        <button className="btn-delete" onClick={ () => getUpPrepareDelete(id) }>Eliminar Producto</button>
-                        <button className="btn-edit" onClick={ () => getUpPrepareUpdate(id) } >Seleccionar</button>
-                       
-                    </li>
-                ) )
+                products?.map( (product, index) => {
+                    return <Product key={`user-${index}`}
+                    product={product}
+                    getUpPrepareDelete={getUpPrepareDelete}
+                    getUpPrepareUpdate={getUpPrepareUpdate}
+                    />
+                }
+                ) 
             }
         </ul>
     )
