@@ -34,19 +34,19 @@ function CRUDProducts()
 	// Crea un nuevo producto
 	create: (url, obj) => {
             axios.post(url, obj)
-		.then(res => res?.data)
+		.then(() => this.getAll(url))
 		.catch(err => console.log(err));
 	},
 	// Actualiza un producto existente
 	update: (url, id, obj) => {
             axios.put(`${url}${id}/`, obj)
-		.then(res => res?.data)
+		.then(() => this.getAll(url))
 		.catch(err => console.log(err));
 	},
 	// Elimina un producto existente
 	delete: (url, id) => {
             axios.delete(`${url}${id}/`)
-		.then(res => res?.data)
+		.then(() => this.getAll(url))
 		.catch(err => console.log(err));
 	}
     };
@@ -57,17 +57,10 @@ function CRUDProducts()
 
     const handleProduct = product => {
         crudMethods.create(url, product); // actualiza el arreglo remoto de productos con un nuevo producto
-	setProducts([...products, product]); // actualiza el arreglo local de productos con un nuevo elemento
     }
 
     const handleUpdatedProduct = product => {
-	const productsCpy = products.map(product2change => {
-            if(product2change.id === product.id)
-	        return product;
-	    return product2change;
-	}); // actualiza un producto de los productos almacenados en local
         crudMethods.update(url, product.id, product); // actualiza un producto de los productos almacenados en remoto
-	setProducts(productsCpy); // almacena esos cambios
     }
 
     const updateProduct = id => {
@@ -76,9 +69,8 @@ function CRUDProducts()
     }
 
     const deleteProduct = id => {
-	const productsCpy = products.filter(product => product.id !== id); // actualiza los productos en local eliminando el producto seleccionado
         crudMethods.delete(url, id); // actualiza los productos en remoto eliminando el producto seleccionado
-	setProducts(productsCpy); // almacena esos cambios
+	
     }
 
     return (
