@@ -18,11 +18,7 @@ const ProductsForm = ( {getUpProduct, getUpProductUpdated, getUpFieldsCleaned, s
     useEffect( () => {
         if(selectedProduct) {
             reset(selectedProduct)
-            getUpFieldsCleaned(false)
-        } else {
-            resetForm()
-            getUpFieldsCleaned(true)
-        }
+        } 
     }, [selectedProduct] )
 
     const resetForm = () => {
@@ -34,6 +30,7 @@ const ProductsForm = ( {getUpProduct, getUpProductUpdated, getUpFieldsCleaned, s
                 isAvailable: false
             }
         )
+        getUpFieldsCleaned()
     }
 
     return (
@@ -74,9 +71,7 @@ const ProductsForm = ( {getUpProduct, getUpProductUpdated, getUpFieldsCleaned, s
                     <input
                     type="checkbox"
                     id="product-available"
-                    { ...register("isAvailable", {
-                        required : true
-                    }) }
+                    { ...register("isAvailable") }
                     />
                 </div>
                 <button type="submit">Enviar</button>
