@@ -1,5 +1,5 @@
-import "../assets/styles/Succes"
-import check from "../assets/img/check"
+import "../assets/styles/Succes.css"
+import check from "../assets/img/check.png"
 
 const Sucess = ( operationType ) => {
 
