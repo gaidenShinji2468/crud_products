@@ -1,9 +1,13 @@
-const Sucess = (  ) => {
+import check from "../assets/img/check"
+
+const Sucess = ( operationType ) => {
 
     return (
-        <div className="success">
-            <h2>El producto fue creado con exito</h2>
-            <button>Cerrar</button>
+        <div className="bg-success">
+            <div className="success">
+                <img src={check} alt="" />
+                <h2>{operationType} realizado con éxito</h2>
+            </div>
         </div>
     )
 }

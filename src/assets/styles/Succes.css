@@ -1,0 +1,26 @@
+.bg-success {
+    display: flex;
+    background-color: rgba(0, 0, 0, .2);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.success {
+    text-align: center;
+    color: rgba(0, 0, 0, .9);
+    background-color: lightgreen;
+    max-width: 300px;
+    padding: 20px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+img {
+    width: 100px;
+}
