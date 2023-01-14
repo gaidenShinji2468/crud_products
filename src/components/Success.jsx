@@ -1,3 +1,4 @@
+import "../assets/styles/Succes"
 import check from "../assets/img/check"
 
 const Sucess = ( operationType ) => {
