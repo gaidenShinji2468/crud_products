@@ -23,35 +23,35 @@ function CRUDProducts()
 	const getProducts = () => {
             axios.get(url)
 		.then(res => setProducts(res?.data))// una vez leidos se almacenan en un estado local
-		.catch(err => handleError(console.log(err), "Lectura de productos"));
+		.catch(err => handleError(() => console.log(err), "Lectura de productos"));
 	}
 
 	// Lee a un solo producto
 	const getProduct = id => {
             axios.get(`${url}${id}`)
 		.then(res => res?.data)
-		.catch(err => handleError(console.log(err), "Lectura del producto"));
+		.catch(err => handleError(() => console.log(err), "Lectura del producto"));
 	}
 
 	// Crea un nuevo producto
 	const createProduct = product => {
             axios.post(url, product)
-		.then(() => handleSuccess(getProducts(), "Creación del producto"))
-		.catch(err => handleError(console.log(err), "Creación del producto"));
+		.then(() => handleSuccess(() => getProducts(), "Creación del producto"))
+		.catch(err => handleError(() => console.log(err), "Creación del producto"));
 	}
 
 	// Actualiza un producto existente
 	const updateProduct = (id, updatedProduct) => {
             axios.put(`${url}${id}/`, updatedProduct)
-		.then(() => handleSuccess(getProducts(url), "Actualización del producto"))
-		.catch(err => handleError(console.log(err), "Actualización del producto"));
+		.then(() => handleSuccess(() => getProducts(url), "Actualización del producto"))
+		.catch(err => handleError(() => console.log(err), "Actualización del producto"));
 	}
 
 	// Elimina un producto existente
 	const deleteProduct = id => {
             axios.delete(`${url}${id}/`)
-		.then(() => handleSuccess(getProducts(url), "Eliminación del producto"))
-		.catch(err => handleError(console.log(err), "Eliminación del producto"));
+		.then(() => handleSuccess(() => getProducts(url), "Eliminación del producto"))
+		.catch(err => handleError(() => console.log(err), "Eliminación del producto"));
 	}
     
     useEffect(() => {
@@ -69,14 +69,14 @@ function CRUDProducts()
     const handleSuccess = (resolve, operationType) => {
         resolve();
 	setDidOpOcurr(!didOpOcurr);
-	setOperation(<Success operationType={opertationType}/>);
+	setOperation(<Success operationType={operationType}/>);
     }
 
     // manejador de operaciones fallidas
     const handleError = (reject, operationType) => {
         reject();
 	setDidOpOcurr(!didOpOcurr);
-	setOperation(<Error operationType={opertationType}/>);
+	setOperation(<Error operationType={operationType}/>);
     }
 
     const handleProduct = product => {
