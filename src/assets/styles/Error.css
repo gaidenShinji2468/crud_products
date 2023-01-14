@@ -1,0 +1,11 @@
+.error{
+width: 300px;
+background-color: #f59e9e;
+text-align: center;
+border: red solid 2px;
+}
+.error > h4{
+font-size: 25px;
+font-family: 'Courier New', Courier, monospace;
+color: #f00;
+}
