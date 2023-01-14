@@ -1,7 +1,8 @@
-const Error = () => {
+import '/src/assets/styles/Error.css'
+const Error = ({operationType}) => {
 return(
     <div className="error">
-        <h4>El producto no existe !!!</h4>
+        <h4>¡{`${operationType}`} FALLIDA!</h4>
     </div>
 )
 }
