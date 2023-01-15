@@ -1,4 +1,4 @@
-          
+import "/src/assets/styles/Product.css"; 
                    
         const Product = ({product, getUpPrepareDelete, getUpPrepareUpdate}) => { 
             

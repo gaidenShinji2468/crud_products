@@ -7,6 +7,7 @@ import ProductsList from "./components/ProductsList";
 import ProductsForm from "./components/ProductsForm";
 import Success from "./components/Success";
 import Error from "./components/Error";
+import "./assets/styles/CRUDProducts.css";
 
 function CRUDProducts()
 {
@@ -62,7 +63,7 @@ function CRUDProducts()
     useEffect(() => {
         setTimeout(() => {
             setOperation(null);
-	}, 3000);
+	}, 1000);
     }, [didOpOcurr]);
 
     // manejador de operaciones exitosas

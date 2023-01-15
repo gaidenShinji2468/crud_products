@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form"
 import { useEffect } from "react"
+import "/src/assets/styles/ProductsForm.css";
 
 const ProductsForm = ( {getUpProduct, getUpProductUpdated, getUpFieldsCleaned, selectedProduct} ) => {
 
@@ -37,8 +38,7 @@ const ProductsForm = ( {getUpProduct, getUpProductUpdated, getUpFieldsCleaned, s
         <div>
             <form onSubmit={ handleSubmit(getFormData) }>
                 <div>
-                    <label htmlFor="product-name">Nombre del producto: </label>
-                    <input
+                    <label htmlFor="product-name">Nombre del producto: </label><input
                     type="text"
                     id="product-name"
                     { ...register("name", {
@@ -47,8 +47,7 @@ const ProductsForm = ( {getUpProduct, getUpProductUpdated, getUpFieldsCleaned, s
                     />
                 </div>
                 <div>
-                    <label htmlFor="product-category">Categoría: </label>
-                    <input
+                    <label htmlFor="product-category">Categoría: </label><input
                     type="text"
                     id="product-category"
                     { ...register("category", {
@@ -57,8 +56,7 @@ const ProductsForm = ( {getUpProduct, getUpProductUpdated, getUpFieldsCleaned, s
                     />
                 </div>
                 <div>
-                    <label htmlFor="product-price">Precio: </label>
-                    <input
+                    <label htmlFor="product-price">Precio: </label><input
                     type="number"
                     id="product-price"
                     { ...register("price", {
@@ -67,8 +65,7 @@ const ProductsForm = ( {getUpProduct, getUpProductUpdated, getUpFieldsCleaned, s
                     />
                 </div>
                 <div>
-                    <label htmlFor="product-available">Disponibilidad: </label>
-                    <input
+                    <label htmlFor="product-available">Disponibilidad: </label><input
                     type="checkbox"
                     id="product-available"
                     { ...register("isAvailable") }

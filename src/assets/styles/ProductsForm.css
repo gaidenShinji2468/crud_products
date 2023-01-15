@@ -1,0 +1,68 @@
+form {
+    width: 500px;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: var(--border-font-color);
+}
+
+form div {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+form div label {
+    width: 170px;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid var(--bg-color);
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    background-color: var(--bg-color);
+    color: var(--border-font-color);
+}
+
+form div input {
+    width: 200px;
+    height: 40px;
+    border: 1px solid var(--bg-color);
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    padding: 8px;
+    background-color: transparent;
+    color: var(--bg-color);
+}
+
+form div:nth-child(4) label {
+    border: none;
+    background-color: transparent;
+    color: var(--bg-color);
+}
+
+form div:nth-child(4) input {
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+}
+
+
+form button {
+    width: 200px;
+    padding: 8px;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid var(--button-blue-color);
+    background-color: var(--button-blue-color);
+    color: var(--border-font-color);
+    font-weight: 600;
+    margin: 0 auto;
+}
+
+form button:hover, form button:focus {
+    background-color: var(--border-font-color);
+    color: var(--button-blue-color);
+}
+
+#loader {
+
+}
