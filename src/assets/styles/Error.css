@@ -26,5 +26,5 @@ height: 100vh;
 }
 img {
     width: 100px;
-    background-color: lightcoral;
+    background-color: inherit;
 }

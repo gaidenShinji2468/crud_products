@@ -1,0 +1,59 @@
+li {
+    width: 500px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+ul li:nth-child(odd) {
+    border: 1px solid var(--border-font-color);
+    color: var(--border-font-color);
+    background-color: var(--bg-color);
+}
+
+ul li:nth-child(even) {
+    border: 1px solid var(--bg-color);
+    color: var(--bg-color);
+    background-color: var(--border-font-color);
+}
+
+li h4 {
+    margin-bottom: 10px;
+}
+
+li span {
+    width: 180px;
+    display: inline-block;
+}
+
+li button {
+    width: 100px;
+    margin-top: 10px;
+    padding: 8px;
+    font-weight: 600;
+    color: var(--border-font-color) !important;
+}
+
+li button:hover, li button:focus {
+    background-color: transparent !important;
+}
+
+li button:nth-child(5) {
+    border: 1px solid var(--button-red-color);
+    border-radius: 10px 0 0 10px;
+    background-color: var(--button-red-color);
+}
+
+li button:nth-child(5):hover, li button:nth-child(5):focus {
+    color: var(--button-red-color) !important;
+}
+
+li button:nth-child(6) {
+    border: 1px solid var(--button-blue-color);
+    border-radius: 0 10px 10px 0;
+    background-color: var(--button-blue-color);
+}
+
+li button:nth-child(6):hover, li button:nth-child(6):focus {
+    color: var(--button-blue-color) !important;
+}
